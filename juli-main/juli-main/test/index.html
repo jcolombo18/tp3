@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- main css -->
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+<header id="main-header" class="container-fluid">
+    <div class="mobile-nav ">
+        <img src="img/logo.png" alt="rick and morty logo">
+        <p class="toggle-nav">&#10094;</p>
+    </div>
+    <nav>
+        <ul>
+            <li class="brand"><img src="img/logo.png" alt="rick and morty logo"></li>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#seasons">Tour</a></li>
+            <li><a href="#character-profile">Music</a></li>
+            <li><a href="#webshop">Shop</a></li>
+        </ul>
+    </nav>
+
+</header>
+<main>
+
+    <!-- slideshow -->
+    <section id="home" class="container-fluid slider">
+        <figure>
+            <img src="img/slider/slide_1.jpg" alt="first-slide">
+        </figure>
+    </section>
+
+    <!-- season info -->
+    <section id="seasons" class="container">
+        <h1 class="highlight">Tour</h1>
+
+        <article class="season">
+
+            <figure role="group" class="episodes">
+                <figcaption id="episode-number" data-active-episode="ep1">No. #1 <br></figcaption>
+
+
+                <figure id="ep2" class="episode">
+                    <img src="img/characters/Honest.jpg" alt="Honest">
+                    <figcaption>
+                    </figcaption>
+                </figure>
+
+                <figure id="ep1" class="episode">
+                    <img src="img/characters/tour.jpg" alt="tour">
+                    <figcaption>
+                    </figcaption>
+                </figure>
+
+
+                <div class="controls">
+                    <button class="prev" onclick="nextEp()">&#10094;</button>
+                    <button class="next" onclick="nextEp()">&#10095;</button>
+                </div>
+
+            </figure>
+        </article>
+
+    </section>
+
+    <!-- characters -->
+    <section id="character-profile" class="container">
+        <h1 class="highlight">Music</h1>
+
+        <article class="character">
+
+            <figure>
+                <img src="img/characters/Honest.jpg" alt="Honest">
+            </figure>
+
+            <section class="character-bio">
+                <h1 class="mb-1">Honest</h1>
+            </section>
+
+        </article>
+
+        <article class="character">
+
+            <figure>
+                <img src="img/characters/tour.jpg" alt="Justice (Triple Chucks Deluxe)">
+            </figure>
+
+            <section class="character-bio">
+                <h1 class="mb-1">Justice</h1>
+            </section>
+
+        </article>
+
+    </section>
+
+    <!-- webshop -->
+    <section id="webshop" class="container">
+        <h1>Shop</h1>
+
+        <article class="shop">
+
+            <section class="shop-item" data-amount="%s" data-img="img/webshop/justice-2lp.webp"
+                     data-description='JUSTICE TRIPLE' data-name="JUSTICE TRIPLE CHUCKS DELUXE VINYL">
+                <p class="price-tag">
+                    <span class="amount">&euro; %s</span>
+                </p>
+                <figure>
+                    <img src="img/webshop/justice-2lp.webp" alt="JUSTICE TRIPLE CHUCKS DELUXE VINYL">
+                </figure>
+                <p class="description">JUSTICE TRIPLE CHUCKS DELUXE VINYL</p>
+                <button class="order-button">Comprar!</button>
+            </section>
+
+            <section class="shop-item" data-amount="%s" data-img="img/webshop/JusticeHoodieIII2.webp""
+                     data-description='Justice Hoodie' data-name="Justice Hoodie III">
+                <p class="price-tag">
+                    <span class="amount">&euro; %s</span>
+                </p>
+                <figure>
+                    <img src="img/webshop/JusticeHoodieIII2.webp" alt="Justice Hoodie III">
+                </figure>
+                <p class="description">Justice Hoodie III</p>
+                <button class="order-button">Comprar!</button>
+            </section>
+
+            <section class="shop-item" data-amount="%s" data-img="img/webshop/PeachesCrop.webp"
+                     data-description='CROP TOP' data-name="BIEBER'S PEACHES CROP TOP">
+                <p class="price-tag">
+                    <span class="amount">&euro; %s</span>
+                </p>
+                <figure>
+                    <img src="img/webshop/PeachesCrop.webp" alt="BIEBER'S PEACHES CROP TOP">
+                </figure>
+                <p class="description">BIEBER'S PEACHES CROP TOP</p>
+                <button class="order-button">Comprar!</button>
+            </section>
+
+            <section id="selected-shop-item" class="selected-shop-item exit-button hidden"
+                     data-exit-target="selected-shop-item">
+
+                <article class="content">
+                    <button class="exit-button" data-exit-target="selected-shop-item">X</button>
+                    <figure>
+                        <img id="selected-item-img" src="#" alt="rick and morty Vinyl Figure">
+                    </figure>
+                    <div class="details">
+                        <div class="group">
+                            <h4 id="selected-item-name" class="item-name">-</h4>
+                            <p id="selected-item-description" class="item-description">-</p>
+                        </div>
+                        <div class="group">
+                            <input type="number" placeholder="Monto">
+                            <button class="order-button exit-button" data-exit-target="selected-shop-item">Comprar!
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </article>
+    </section>
+
+
+    <section class="container order-form">
+        <article>
+            <h5 class="margin-2">Entrega Rapida</h5>
+            <p class="margin-2">Nos aseguramos de que su pedido se entregue dentro de las 24 horas.</p>
+
+            <h5 class="margin-2">Devoluciones y condiciones</h5>
+            <ul>
+                <li>Período de reflexión de 14 días.</li>
+                <li>Los costos de devolución corren por su cuenta</li>
+            </ul>
+        </article>
+        <form>
+            <h5 id='order-form' class="margin-3">Comprar</h5>
+            <label for="name">Nombre</label>
+            <input id="name" type="text" placeholder="Nombre">
+
+            <label for="address">Direccion</label>
+            <input id="address" type="text" placeholder="Direccion">
+
+            <label for="email">E-mail</label>
+            <input id="email" type="text" placeholder="E-mail">
+
+            <label for="phone">Telefono</label>
+            <input id="phone" type="tel" placeholder="Telefono">
+
+            <button type="submit">Comprar!</button>
+        </form>
+    </section>
+
+</main>
+<footer>
+    &copy; Juli.
+</footer>
+<script src="js/main.js"></script>
+
+</body>
+</html>
